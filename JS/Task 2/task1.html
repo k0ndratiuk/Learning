@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Задание 1</title>
+  </head>
+  <body>
+    <h1>Задание 1</h1>
+    <p>
+      Получен список 10 проданных товаров в формате «название, стоимость за
+      единицу товара, количество». Информацию по каждому товару будем называть
+      чеком. Напишите программу, которая <br />
+      1)выведет все товары в алфавитном порядке наименований <br />
+      2) выведет наименование товаров и стоимость чеков (оплату за купленное
+      количество = стоимость * количество) <br />
+      3) выведет общую сумму оплаты за все товары, купленные в количестве меньше
+      5 шт. <br />
+      4) среди дорогостоящих товаров (стоимость за единицу товара превышает 100
+      грн.) найдет тот, который имеет минимальную стоимость чека. <br />
+      Каждый товар оформить как объект. Список товаров представить как массив
+      объектов.
+    </p>
+    <script>
+      function makeCheck(name, cost, quantity) {
+        return {
+          name: name,
+          cost: cost,
+          quantity: quantity
+        };
+      }
+
+      let check1 = makeCheck("Огірки", 67.75, 5);
+      let check2 = makeCheck("Картопля", 13.09, 8);
+      let check3 = makeCheck("Буряк", 6.32, 2);
+      let check4 = makeCheck("Печериці", 71.09, 2);
+      let check5 = makeCheck("Курятина філе", 107.5, 5);
+      let check6 = makeCheck("Буженина Ятрань", 291.8, 4);
+      let check7 = makeCheck("Бекон Ятрань іспанський", 204.63, 1);
+      let check8 = makeCheck("Сало солоне", 140.72, 1);
+      let check9 = makeCheck("Цукор", 13.06, 7);
+      let check10 = makeCheck("Короп", 90.33, 2);
+
+      let list = [
+        check1,
+        check2,
+        check3,
+        check4,
+        check5,
+        check6,
+        check7,
+        check8,
+        check9,
+        check10
+      ];
+
+      list.sort(function(a, b) {
+        var nameA = a.name.toLowerCase(),
+          nameB = b.name.toLowerCase();
+        if (nameA < nameB) return -1;
+        if (nameA > nameB) return 1;
+        return 0;
+      });
+
+      function sumCheck() {
+        let sumCheck = [];
+        for (let i = 0; i < list.length; i++) {
+          sumCheck[i] = list[i].cost * list[i].quantity;
+          console.log(list[i].name + " " + sumCheck[i]);
+        }
+      }
+
+      function sumQuantity() {
+        let sumQuantity = 0;
+        for (let i = 0; i < list.length; i++) {
+          if (list[i].quantity < 5) {
+            sumQuantity += list[i].cost * list[i].quantity;
+            // console.log(sumQuantity);
+          } else if (list[i].quantity >= 5) {
+            sumQuantity += 0;
+          }
+        }
+
+        console.log(
+          "Загальна сума, коли кількість товару менша за 5: " +
+            Math.round(sumQuantity)
+        );
+      }
+      function minCheck() {
+        let minCheck = [];
+        let sumCheck = 0;
+        let reslt;
+        let mName;
+        for (let i = 0; i < list.length; i++) {
+          if (list[i].cost > 100) {
+            sumCheck = list[i].cost * list[i].quantity;
+            minCheck.push(sumCheck);
+
+            console.log(minCheck);
+            reslt = Math.min(...minCheck);
+            mName = list[i].name;
+          }
+        }
+        console.log("Мінімальна вартість чека: " + mName + " " + reslt);
+      }
+      console.log(list.sort());
+      sumCheck();
+      sumQuantity();
+      minCheck();
+    </script>
+  </body>
+</html>

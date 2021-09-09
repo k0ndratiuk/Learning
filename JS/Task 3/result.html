@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/style.css" />
+
+    <title>Результат</title>
+  </head>
+  <body>
+    <div class="price">
+      <div class="container">
+        <table class="result__table">
+          <tr>
+            <th id="service">Услуга</th>
+            <th id="cost">Стоимость</th>
+            <th id="unit">Единица</th>
+            <th id="parameter">Параметр</th>
+            <th id="price">Цена</th>
+          </tr>
+          <tr>
+            <td id="service">Высота потолков</td>
+            <td id="cost"></td>
+            <td id="unit"></td>
+            <td id="parameter"><div id="h"></div></td>
+            <td id="price"></td>
+          </tr>
+          <tr>
+            <td id="service">Комната (ширина)</td>
+            <td id="cost"></td>
+            <td id="unit"></td>
+            <td id="parameter"><div id="x"></div></td>
+            <td id="price"></td>
+          </tr>
+          <tr>
+            <td id="service">Комната (длина)</td>
+            <td id="cost"></td>
+            <td id="unit"></td>
+            <td id="parameter"><div id="y"></div></td>
+            <td id="price"></td>
+          </tr>
+          <tr>
+            <td id="service">Комната (площадь пола)</td>
+            <td id="cost"></td>
+            <td id="unit"></td>
+            <td id="parameter"><div id="getSPol"></div></td>
+            <td id="price"></td>
+          </tr>
+          <tr>
+            <td id="service">Комната (площадь стен)</td>
+            <td id="cost"></td>
+            <td id="unit"></td>
+            <td id="parameter"><div id="getSSten"></div></td>
+            <td id="price"></td>
+          </tr>
+          <tr>
+            <td id="service">Кухня (ширина)</td>
+            <td id="cost"></td>
+            <td id="unit"></td>
+            <td id="parameter"><div id="xk"></div></td>
+            <td id="price"></td>
+          </tr>
+          <tr>
+            <td id="service">Кухня (длина)</td>
+            <td id="cost"></td>
+            <td id="unit"></td>
+            <td id="parameter"><div id="yk"></div></td>
+            <td id="price"></td>
+          </tr>
+          <tr>
+            <td id="service">Кухня (площадь пола)</td>
+            <td id="cost"></td>
+            <td id="unit"></td>
+            <td id="parameter"><div id="kgetSPol"></div></td>
+            <td id="price"></td>
+          </tr>
+          <tr>
+            <td id="service">Кухня (площадь стен)</td>
+            <td id="cost"></td>
+            <td id="unit"></td>
+            <td id="parameter"><div id="kgetSSten"></div></td>
+            <td id="price"></td>
+          </tr>
+          <tr>
+            <td id="service">Стяжка (потолок)</td>
+            <td id="cost">200</td>
+            <td id="unit">кв. м</td>
+            <td id="parameter"><div id="checkSummaStyazhka"></div></td>
+            <td id="price"><div id="summaStyazhka"></div></td>
+          </tr>
+          <tr>
+            <td id="service">Демонтаж стяжки (потолок)</td>
+            <td id="cost">100</td>
+            <td id="unit">кв. м</td>
+            <td id="parameter"><div id="checkSummaStyazhka_dem"></div></td>
+            <td id="price"><div id="summaStyazhka_dem"></div></td>
+          </tr>
+          <tr>
+            <td id="service">Штукатурка (стены)</td>
+            <td id="cost">300</td>
+            <td id="unit">кв. м</td>
+            <td id="parameter"><div id="checkSummaStukaturka"></div></td>
+            <td id="price"><div id="summaStukaturka"></div></td>
+          </tr>
+          <tr>
+            <td id="service">Демонтаж штукатурки (стены)</td>
+            <td id="cost">100</td>
+            <td id="unit">кв. м</td>
+            <td id="parameter"><div id="checkSummaStukaturka_dem"></div></td>
+            <td id="price"><div id="summaStukaturka_dem"></div></td>
+          </tr>
+          <tr>
+            <td id="service">Уровень ремонта (эконом)</td>
+            <td id="cost">1</td>
+            <td id="unit">коэффициент</td>
+            <td id="parameter"><div id="economical"></div></td>
+            <td id="price"></td>
+          </tr>
+          <tr>
+            <td id="service">Уровень ремонта (стандарт)</td>
+            <td id="cost">1.5</td>
+            <td id="unit">коэффициент</td>
+            <td id="parameter"><div id="standard"></div></td>
+            <td id="price"></td>
+          </tr>
+          <tr>
+            <td id="service">Уровень ремонта (премиум)</td>
+            <td id="cost">2</td>
+            <td id="unit">коэффициент</td>
+            <td id="parameter"><div id="premium"></div></td>
+            <td id="price"></td>
+          </tr>
+          <tr>
+            <td id="service">Напольное покрытие в комнате (паркет)</td>
+            <td id="cost">250</td>
+            <td id="unit">кв. м</td>
+            <td id="parameter"><div id="ckeckSummaPolPar"></div></td>
+            <td id="price"><div id="summaPolPar"></div></td>
+          </tr>
+          <tr>
+            <td id="service">Напольное покрытие в комнате (ламинат)</td>
+            <td id="cost">150</td>
+            <td id="unit">кв. м</td>
+            <td id="parameter"><div id="ckeckSummaPolLam"></div></td>
+            <td id="price"><div id="summaPolLam"></div></td>
+          </tr>
+          <tr>
+            <td id="service">Напольное покрытие в комнате (плитка)</td>
+            <td id="cost">200</td>
+            <td id="unit">кв. м</td>
+            <td id="parameter"><div id="ckeckSummaPolPli"></div></td>
+            <td id="price"><div id="summaPolPli"></div></td>
+          </tr>
+          <tr>
+            <td id="service">Напольное покрытие в комнате (линолеум)</td>
+            <td id="cost">100</td>
+            <td id="unit">кв. м</td>
+            <td id="parameter"><div id="ckeckSummaPolLen"></div></td>
+            <td id="price"><div id="summaPolLen"></div></td>
+          </tr>
+          <tr>
+            <td id="service">Напольное покрытие в кухне (паркет)</td>
+            <td id="cost">250</td>
+            <td id="unit">кв. м</td>
+            <td id="parameter"><div id="ckeckKsummaPolPar"></div></td>
+            <td id="price"><div id="ksummaPolPar"></div></td>
+          </tr>
+          <tr>
+            <td id="service">Напольное покрытие в кухне (ламинат)</td>
+            <td id="cost">150</td>
+            <td id="unit">кв. м</td>
+            <td id="parameter"><div id="ckeckKsummaPolLam"></div></td>
+            <td id="price"><div id="ksummaPolLam"></div></td>
+          </tr>
+          <tr>
+            <td id="service">Напольное покрытие в кухне (плитка)</td>
+            <td id="cost">200</td>
+            <td id="unit">кв. м</td>
+            <td id="parameter"><div id="ckeckKsummaPolPli"></div></td>
+            <td id="price"><div id="ksummaPolPli"></div></td>
+          </tr>
+          <tr>
+            <td id="service">Напольное покрытие в кухне (линолеум)</td>
+            <td id="cost">100</td>
+            <td id="unit">кв. м</td>
+            <td id="parameter"><div id="ckeckKsummaPolLen"></div></td>
+            <td id="price"><div id="ksummaPolLen"></div></td>
+          </tr>
+          <tr>
+            <td id="service">Шумоизоляция</td>
+            <td id="cost">100</td>
+            <td id="unit"></td>
+            <td id="parameter"><div id="ckeckGetSummaShum"></div></td>
+            <td id="price"><div id="getSummaShum"></div></td>
+          </tr>
+          <tr>
+            <td id="service">Багеты</td>
+            <td id="cost">50</td>
+            <td id="unit"></td>
+            <td id="parameter"><div id="checkGetSummaBagets"></div></td>
+            <td id="price"><div id="getSummaBagets"></div></td>
+          </tr>
+          <tr>
+            <td id="service">Лепнина</td>
+            <td id="cost">200</td>
+            <td id="unit"></td>
+            <td id="parameter"><div id="checkGetSummaLeplina"></div></td>
+            <td id="price"><div id="getSummaLeplina"></div></td>
+          </tr>
+          <tr>
+            <td id="service">Смеситель</td>
+            <td id="cost">600</td>
+            <td id="unit">1 шт</td>
+            <td id="parameter"><div id="checkSummaSmesitel"></div></td>
+            <td id="price"><div id="summaSmesitel"></div></td>
+          </tr>
+          <tr>
+            <td id="service">Мойка</td>
+            <td id="cost">500</td>
+            <td id="unit">1 шт</td>
+            <td id="parameter"><div id="checkSummaMoyka"></div></td>
+            <td id="price"><div id="summaMoyka"></div></td>
+          </tr>
+          <tr>
+              <td id="service">Всего</td>
+              <td id="cost"></td> 
+              <td id="unit"></td>
+              <td id="parameter"></td>
+              <td id="price"><div id="summaAll"></div></td>
+          </tr>
+        </table>
+      </divi>
+    </divi>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script type="text/javascript" src="./calc.js"></script>
+  <script src="/result.js"></script>
+</html>

@@ -1,0 +1,69 @@
+td {
+  margin: 0;
+}
+.price__table {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 22px;
+  padding: 6px;
+}
+.price__table th {
+  border-bottom: 1px solid rgb(114, 114, 114);
+  padding: 6px;
+  background-color: rgb(206, 204, 204);
+}
+.price__table td {
+  border-bottom: 1px solid rgb(114, 114, 114);
+  padding: 6px;
+}
+
+.result__table {
+  width: 50%;
+  margin: auto;
+  width: 50%;
+  font-size: 22px;
+  padding: 6px;
+}
+.result__table th {
+  /* border-bottom: 1px solid rgb(114, 114, 114); */
+  padding: 6px;
+  background-color: rgb(206, 204, 204);
+}
+.result__table td {
+  /* border-bottom: 1px solid rgb(114, 114, 114); */
+  padding: 6px;
+}
+#service {
+  background-color: rgb(160, 160, 160);
+}
+#cost {
+  background-color: rgb(180, 180, 180);
+}
+#unit {
+  background-color: rgb(200, 200, 200);
+}
+#parameter {
+  background-color: rgb(220, 220, 220);
+}
+#price {
+  background-color: rgb(240, 240, 240);
+}
+
+.result__table tr:last-child {
+  background-color: rgb(226, 226, 226);
+}
+.services {
+  font-size: 20px;
+}
+.rooms {
+  display: flex;
+}
+.room {
+  margin: 10px 20px;
+  font-size: 20px;
+}
+.kitchen {
+  margin: 10px 20px;
+  font-size: 20px;
+}

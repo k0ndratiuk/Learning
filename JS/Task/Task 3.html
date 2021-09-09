@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Task 3</title>
+  </head>
+  <body>
+    <h1>Задача 3</h1>
+    <p>
+      Задан массив продаж в грн. за первую декаду месяца (с 1 по 10 число).
+      <br />
+      Определить: <br />
+      1) Какое максимальное значение удалось заработать. <br />
+      2) Вывести номера дней, когда продажи были равны максимальному значению.
+      <br />
+      3) Сколько дней держались максимальные продажи <br />
+      4) Количество дней, где продажи были выше среднего значения и общую сумму
+      продаж за эти дни. <br />
+      5) Отсортировать продажи по убыванию.
+    </p>
+    <script>
+      let A = [1, 2, 3, 10, 2, 6, 7, 10, 9, 10];
+      let sum = 0;
+      function arraySum() {
+        for (var i = 0; i < A.length; i++) {
+          sum += A[i];
+          console.log(sum);
+        }
+        return sum;
+      }
+      // 1) Какое максимальное значение удалось заработать.
+      function max() {
+        return Math.max(...A);
+      }
+
+      // 2) Вывести номера дней, когда продажи были равны максимальному значению.
+      let arr = [];
+      function numersDay() {
+        var id = 0;
+        var max = Math.max(...A);
+        for (var i = 0; i < A.length; i++) {
+          if (A[i] >= max) {
+            id = i + 1;
+            arr.push(id);
+          }
+        }
+        return arr;
+      }
+
+      // 3) Сколько дней держались максимальные продажи
+      function maxDaysPay() {
+        return arr.length;
+      }
+
+      // 4) Количество дней, где продажи были выше среднего значения и общую сумму продаж за эти дни.
+
+      let averageValue = arraySum() / A.length;
+      function aboveAverage() {
+        let daysAverage = [];
+        for (var i = 0; i < A.length; i++) {
+          if (A[i] > averageValue) {
+            daysAverage.push(i);
+            console.log(daysAverage);
+          }
+        }
+        return daysAverage.length;
+      }
+
+      function sumDaysAverage() {
+        let sum;
+        var arrdays = [];
+        for (var i = 0; i < A.length; i++) {
+          if (A[i] > averageValue) {
+            arrdays.push(A[i]);
+
+            sum = arrdays.reduce(
+              (accumulator, currentValue) => accumulator + currentValue
+            );
+          }
+        }
+        return sum;
+      }
+
+      // 5)Отсортировать продажи по убыванию.
+      function sortPo() {
+        A.sort((a, b) => b - a);
+
+        return A;
+      }
+
+      alert("Максимальне значення яке вдалось заробити: " + max());
+      alert(
+        "Дні, коли продажі були рівні максимальному значеню: " + numersDay()
+      );
+      alert("Скільки днів держались максимальні продажі: " + maxDaysPay());
+      alert(
+        "Кількість днів, коли продажі були вище середньго значення: " +
+          aboveAverage() +
+          " та їх загальна сума за ці дні " +
+          sumDaysAverage()
+      );
+      alert("Відсортовані продажі за зменшенням: " + sortPo());
+    </script>
+  </body>
+</html>

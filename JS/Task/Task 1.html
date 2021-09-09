@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Task 1</title>
+  </head>
+
+  <body>
+    <h1>Завдання 1</h1>
+    <p>
+      1. В лагере следует детей распределить по отрядам по принципу: <br />
+      от 7 до 9 лет, мальчики - отряд “Винни-пух“, <br />
+      от 7 до 9 лет, девочки - отряд “Дюймовочка“, <br />
+      от 10 до 12 лет, мальчики - отряд “Гарри Потер“, <br />
+      от 10 до 12 лет, девочки - отряд “Принцесса“, <br />
+      от 13 до 15 лет, мальчики - отряд “Пираты“, <br />
+      от 13 до 15 лет - отряд “Волшебницы“. <br />
+      Скрипт должен запросить дату рождения в формате день-месяц-год и пол
+      ребенка (или можно задать непосредственно в скрипте), в результате должно
+      появится сообщение с названием отряда (или можно вывести на консоль).
+      Возраст ребенка должен быть рассчитан как количество полных лет
+      относительно текущей даты.
+    </p>
+    <script>
+      let DOB = prompt("Введіть дату народження у форматі (ДД-ММ-РРРР):").split(
+        "-"
+      );
+
+      let gender = prompt("Введіть стать (хлопчик або дівчинка):");
+      if (gender == "хлопчик") {
+        if (getAge() >= 7 && getAge() <= 9) {
+          alert("отряд “Винни-пух“");
+        } else if (getAge() >= 10 && getAge() <= 12) {
+          alert("отряд “Гарри Потер“");
+        } else if (getAge() >= 13 && getAge() <= 15) {
+          alert("отряд “Пираты“");
+        } else {
+          alert("Не вік для лагеру");
+        }
+      }
+      if (gender == "дівчинка") {
+        if (getAge() >= 7 && getAge() <= 9) {
+          alert("отряд “Дюймовочка“");
+        } else if (getAge() >= 10 && getAge() <= 12) {
+          alert("отряд “Принцесса“");
+        } else if (getAge() >= 13 && getAge() <= 15) {
+          alert("отряд “Волшебницы“");
+        } else {
+          alert("Не вік для лагеру");
+        }
+      }
+
+      function getAge() {
+        var today = new Date();
+        var birthDate = new Date(DOB[2], DOB[1] - 1, DOB[0]);
+        var age = today.getFullYear() - birthDate.getFullYear();
+        var m = today.getMonth() - birthDate.getMonth();
+        if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+          age = age - 1;
+        }
+
+        return age;
+      }
+
+      // alert(getAge());
+    </script>
+  </body>
+</html>

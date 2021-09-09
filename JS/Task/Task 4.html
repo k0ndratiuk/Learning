@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Task 4</title>
+  </head>
+  <body>
+    <h1>Завдання 4</h1>
+    <p>
+      Задан прямоугольный массив размером 4 строки и 5 столбиков. Массив
+      содержит информацию о количестве проданных мобильных телефонов продавцом
+      Ивановым за каждый рабочий день с пн по пт в течение 4-х недель. <br />
+      Определить: <br />
+      1)Общую сумму продаж за весь рабочий период. <br />
+      2)День недели, когда было продано наименьшее количество телефонов. <br />
+      3)Какая неделя дала наибольшее количество продаж <br />
+      4)Средние продажи по средам.
+    </p>
+    <script>
+      let arr = [
+        [9, 2, 3, 4, 5],
+        [6, 7, 8, 10, 10],
+        [11, 12, 13, 14, 15],
+        [14, 13, 12, 1, 10]
+      ];
+      console.log(arr);
+      //1)Общую сумму продаж за весь рабочий период.
+      function sumAll() {
+        var sum = 0;
+        for (var i = 0; i < 4; i++) {
+          for (var j = 0; j < 5; j++) {
+            sum += arr[i][j];
+          }
+        }
+        alert("Сума продаж за весь робочий період становить: " + sum);
+      }
+
+      //2)День недели, когда было продано наименьшее количество телефонов.
+      function arrayMin() {
+        var min = arr[0][0];
+        var imin = 1;
+        var jmin = 0;
+        for (var i = 0; i < 4; i++) {
+          for (var j = 0; j < 5; j++) {
+            if (arr[i][j] < min) {
+              min = arr[i][j];
+              imin += i;
+              jmin += j;
+            }
+          }
+        }
+        alert(
+          "На " +
+            imin +
+            " тижні, в " +
+            jmin +
+            " день було продано найменше телефонів"
+        );
+        // return arrmin;
+      }
+
+      //3)Какая неделя дала наибольшее количество продаж
+      function sumWeek() {
+        var max = 0;
+        var imax = 0;
+        for (var i = 0; i < 4; i++) {
+          var sum = 0;
+          for (var j = 0; j < 5; j++) {
+            sum += arr[i][j];
+            if (max <= sum) {
+              max = sum;
+              imax = i;
+            }
+          }
+        }
+
+        alert(imax + 1 + " неділя дала найбільшу кількість продажів");
+      }
+      //4)Средние продажи по средам.
+      function sumWednesday() {
+        var sumWednesday = 0;
+
+        for (var i = 0; i < 4; i++) {
+          sumWednesday += arr[i][2];
+          console.log("Wednesday:" + sumWednesday);
+        }
+        sumWednesday = sumWednesday / 4;
+        console.log(sumWednesday);
+        alert("Середнє значення продаж по середах становить: " + sumWednesday);
+      }
+
+      sumAll();
+      arrayMin();
+      sumWeek();
+      sumWednesday();
+    </script>
+  </body>
+</html>
